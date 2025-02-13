@@ -14,10 +14,15 @@ const UserList = () => {
   const countryNames: CountryNames[] = data?.countries;
   return (
     <div>
-      <h1>Country List</h1>
-      <ul className="user-list">
-        {countryNames.map((country) => (
-          <li>{country.name}</li>
+      <h1 className="mt-5 text-center text-2xl font-semibold">Country List</h1>
+      <ul className="h-[400px] overflow-y-auto mt-5 flex flex-col gap-y-1.5">
+        {countryNames.map((country, index) => (
+          <li className="flex items-center gap-x-2.5">
+
+              <span className="text-sm font-bold">{index + 1}.</span>
+              <span className="text-sm font-normal">{country.name}</span>
+
+          </li>
         ))}
       </ul>
     </div>
